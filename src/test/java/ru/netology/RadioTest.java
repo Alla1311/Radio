@@ -19,7 +19,7 @@ public class RadioTest {
     }
     @Test
 
-    public void ShouldSetRadioStation() {
+    public void shouldSetRadioStation() {
         Radio radio = new Radio();
 
         radio.setCurrentRadioStation(8);
@@ -31,7 +31,7 @@ public class RadioTest {
     }
 
     @Test
-    public void ShouldRadioStation() {
+    public void shouldRadioStation() {
         Radio radio = new Radio();
 
         radio.setCurrentRadioStation(-1);
@@ -43,7 +43,7 @@ public class RadioTest {
 
     @Test
 
-    public void ShouldNotSetNewRadioStationAboveMax() {
+    public void shouldNotSetNewRadioStationAboveMax() {
         Radio radio = new Radio();
 
         radio.setCurrentRadioStation(10);
@@ -55,7 +55,7 @@ public class RadioTest {
     }
     @Test
 
-    public void ShouldNotSetRadioStationAboveMax() {
+    public void shouldNotSetRadioStationAboveMax() {
         Radio radio = new Radio();
 
         radio.setCurrentRadioStation(9);
@@ -66,7 +66,7 @@ public class RadioTest {
     }
 
     @Test
-    public void ShouldNotSetRadioStationUnderMin() {
+    public void shouldNotSetRadioStationUnderMin() {
         Radio radio = new Radio();
 
         radio.setCurrentRadioStation(11);
@@ -79,30 +79,30 @@ public class RadioTest {
 
     @Test
 
-    public void ShouldSetToMaxRadioStation() {
+    public void shouldSetToMaxRadioStation() {
         Radio radio = new Radio();
 
-        radio.SetToMaxRadioStation();
-        int expected = 9;
-        int actual = radio.getCurrentRadioStation();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-
-    public void ShouldSetToMinRadioStation() {
-        Radio radio = new Radio();
-
-        radio.SetToMinRadioStation();
+        radio.setToMinRadioStation();
         int expected = 0;
         int actual = radio.getCurrentRadioStation();
+
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
 
-    public void ShouldSetVolume() {
+    public void shouldSetToMinRadioStation() {
+        Radio radio = new Radio();
+
+        radio.setToMaxRadioStation();
+        int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void shouldSetVolume() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(8);
@@ -115,7 +115,7 @@ public class RadioTest {
 
     @Test
 
-    public void ShouldNotSetVolumeAboveMax() {
+    public void shouldNotSetVolumeAboveMax() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(11);
@@ -128,10 +128,10 @@ public class RadioTest {
 
     @Test
 
-    public void ShouldSetToMaxVolume() {
+    public void shouldSetToMaxVolume() {
         Radio radio = new Radio();
 
-        radio.SetToMaxVolume();
+        radio.setToMaxVolume();
         int expected = 10;
         int actual = radio.getCurrentVolume();
 
@@ -140,17 +140,17 @@ public class RadioTest {
 
     @Test
 
-    public void ShouldSetToMinVolume() {
+    public void shouldSetToMinVolume() {
         Radio radio = new Radio();
 
-        radio.SetToMinVolume();
+        radio.setToMinVolume();
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void ShouldNotSetVolumeUnderMin() {
+    public void shouldNotSetVolumeUnderMin() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(11);
@@ -215,15 +215,15 @@ public class RadioTest {
     @Test
     public void newPrevStation() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(5);
+        radio.setCurrentRadioStation(0);
         radio.prevRadioStation();
 
-        int expected = 4;
+        int expected = 0;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void ShouldNotNeedNewPrevStation() {
+    public void shouldNotNeedNewPrevStation() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
         radio.prevRadioStation();
