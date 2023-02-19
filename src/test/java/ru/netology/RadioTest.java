@@ -17,6 +17,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
 
     public void shouldSetRadioStation() {
@@ -53,6 +54,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
 
     public void shouldNotSetRadioStationAboveMax() {
@@ -200,6 +202,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
 
     public void nextNewRadioStation() {
@@ -212,6 +215,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void newPrevStation() {
         Radio radio = new Radio();
@@ -222,6 +226,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotNeedNewPrevStation() {
         Radio radio = new Radio();
@@ -272,6 +277,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldIncreaseToPrevVolume() {
         Radio radio = new Radio();
@@ -283,6 +289,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNewIncreaseToPrevVolume() {
         Radio radio = new Radio();
