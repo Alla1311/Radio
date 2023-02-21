@@ -11,10 +11,10 @@ public class Radio {
     public Radio() {
     }
 
-   public Radio(int size) {
-        size = size -1;
+    public Radio(int size) {
+        size = size - 1;
         maxRadioStation = minRadioStation + 1;
-   }
+    }
 
     // Радиостанция
     public int getMaxRadioStation() {

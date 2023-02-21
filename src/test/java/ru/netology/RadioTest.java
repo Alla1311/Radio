@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void nextTestRadioStation(){
+    public void nextTestRadioStation() {
         Radio radio = new Radio(20);
         radio.setMaxRadioStation(16);
         radio.setMinRadioStation(0);
@@ -14,8 +14,9 @@ public class RadioTest {
         radio.nextCurrentRadioStation();
         Assertions.assertEquals(16, radio.getCurrentRadioStation());
     }
+
     @Test
-    public void prevTestRadioStation(){
+    public void prevTestRadioStation() {
         Radio radio = new Radio(20);
         radio.setMaxRadioStation(18);
         radio.setMinRadioStation(0);
