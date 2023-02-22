@@ -3,17 +3,18 @@ package ru.netology;
 public class Radio {
     private int maxRadioStation = 9;
     private int minRadioStation = 0;
-    private int currentRadioStation;
+    private int RadioStation = minRadioStation;
+    private int sizeRadioStation = 10;
     private int maxVolume = 100;
     private int minVolume = 0;
-    private int currentVolume;
+    private int Volume = minVolume;
 
     public Radio() {
     }
 
     public Radio(int size) {
-        size = size - 1;
-        maxRadioStation = minRadioStation + 1;
+        this.sizeRadioStation = size - 1;
+        maxRadioStation = minRadioStation + sizeRadioStation;
     }
 
     // Радиостанция
@@ -34,45 +35,45 @@ public class Radio {
     }
 
     public int getCurrentRadioStation() {
-        return currentRadioStation;
+        return RadioStation;
     }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation > maxRadioStation) {
+    public void setCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation > maxRadioStation) {
             return;
         }
-        if (currentRadioStation < minRadioStation) {
+        if (newCurrentRadioStation < minRadioStation) {
             return;
         }
-        this.currentRadioStation = currentRadioStation;
+        this.RadioStation = newCurrentRadioStation;
     }
 
 
     public void nextCurrentRadioStation() {
-        int currentRadioStation = this.currentRadioStation;
+        int currentRadioStation = this.RadioStation;
         if (currentRadioStation >= maxRadioStation) {
-            this.currentRadioStation = minRadioStation;
+            this.RadioStation = minRadioStation;
         } else {
-            this.currentRadioStation = currentRadioStation + 1;
+            this.RadioStation = currentRadioStation + 1;
         }
     }
 
     public void prevCurrentRadioStation() {
-        int currentRadioStation = this.currentRadioStation;
+        int currentRadioStation = this.RadioStation;
         if (currentRadioStation <= minRadioStation) {
-            this.currentRadioStation = maxRadioStation;
+            this.RadioStation = maxRadioStation;
         } else {
-            this.currentRadioStation = currentRadioStation - 1;
+            this.RadioStation = currentRadioStation - 1;
         }
     }
 
     public void remoteCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxRadioStation) {
-            this.currentRadioStation = maxRadioStation;
+            this.RadioStation = maxRadioStation;
         } else if (currentRadioStation < minRadioStation) {
-            this.currentRadioStation = minRadioStation;
+            this.RadioStation = minRadioStation;
         } else {
-            this.currentRadioStation = currentRadioStation;
+            this.RadioStation = currentRadioStation;
         }
     }
 
@@ -94,7 +95,7 @@ public class Radio {
     }
 
     public int getCurrentVolume() {
-        return currentVolume;
+        return Volume;
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -104,24 +105,24 @@ public class Radio {
         if (currentVolume < minVolume) {
             return;
         }
-        this.currentVolume = currentVolume;
+        this.Volume = currentVolume;
     }
 
     public void nextCurrentVolume() {
-        int currentVolume = this.currentVolume;
+        int currentVolume = this.Volume;
         if (currentVolume >= maxVolume) {
-            this.currentVolume = maxVolume;
+            this.Volume = maxVolume;
         } else {
-            this.currentVolume = currentVolume + 1;
+            this.Volume = currentVolume + 1;
         }
     }
 
     public void prevCurrentVolume() {
-        int currentVolume = this.currentVolume;
+        int currentVolume = this.Volume;
         if (currentVolume <= minVolume) {
-            this.currentVolume = minVolume;
+            this.Volume = minVolume;
         } else {
-            this.currentVolume = currentVolume - 1;
+            this.Volume = currentVolume - 1;
         }
     }
 }
